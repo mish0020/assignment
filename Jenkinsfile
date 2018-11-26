@@ -2,10 +2,15 @@ pipeline{
 
 agent{label 'linux'}
     stages{
-		stage('Test'){
+		stage('Linting'){
 			steps{
 			   sh 'flake8 app/site.py'
 			}
 		}
+	    stage('Build') {
+		    steps{
+			   docker  docker build -t classweb:${BUILD_NUMBER} .
+			 }
+	    }
     }
 }

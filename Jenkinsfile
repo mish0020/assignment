@@ -9,7 +9,7 @@ agent{label 'linux'}
 		}
 	    stage('Build') {
 		    steps{
-			   docker  docker build -t classweb:${BUILD_NUMBER} .
+			   docker build -t classweb:${BUILD_NUMBER} .
 			 }
 	    }
     }

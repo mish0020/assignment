@@ -21,6 +21,5 @@ agent{label 'linux'}
     post {
 	 always 
 	      {sh 'docker rm -f classweb1'}
-	}
     }
 }

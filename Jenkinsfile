@@ -9,7 +9,7 @@ agent{label 'linux'}
 	   }
 	    stage('Build') {
 		    steps{
-			   sh 'docker build --no-cache -t classweb:${BUILD_NUMBER} .'
+			   sh 'docker build  -t classweb:${BUILD_NUMBER} .'
 		    }
 	    }
 	    stage('Test') {
@@ -19,8 +19,9 @@ agent{label 'linux'}
 	    }
     }  	    
     post {
-	 always {
-		sh 'docker rm classweb1'
+	 always 
+	    {sh 'docker stop classweb1}	    
+	    {sh 'docker rm classweb1'}
 	}
     }
 }

@@ -9,7 +9,7 @@ agent{label 'linux'}
 	   }
 	    stage('Build') {
 		    steps{
-			   sh 'docker build -t classweb:${BUILD_NUMBER} .'
+			   sh 'docker build -t --no-cache classweb:${BUILD_NUMBER} .'
 		    }
 	    }
 	    stage('Test') {

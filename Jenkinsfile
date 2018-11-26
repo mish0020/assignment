@@ -15,7 +15,7 @@ agent{label 'linux'}
 	    stage('Test') {
 			steps{
 					sh 'docker run -d --rm --name classweb1 -p 80:8080 classweb:${BUILD_NUMBER}',
-					curl $(curl 169.254.169.254/latest/meta-data/local-ipv4) | grep "super"
+					sh 'curl $(curl 169.254.169.254/latest/meta-data/local-ipv4) | grep "super"'
 			}
 		}
     }

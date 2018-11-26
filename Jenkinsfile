@@ -4,7 +4,7 @@ agent{label 'linux'}
     stages{
 		stage('Test'){
 			steps{
-				flacke8 app/site.py
+				flacke8 site.py
 			}
 		}
     }

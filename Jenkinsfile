@@ -20,7 +20,7 @@ agent{label 'linux'}
     }  	    
     post {
 	 always 
-	    {sh 'docker stop classweb1}	    
+	    {sh 'docker stop classweb1'}	    
 	    {sh 'docker rm classweb1'}
 	}
     }

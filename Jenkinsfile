@@ -20,7 +20,7 @@ agent{label 'linux'}
     }  	    
     post {
 	 always {
-		echo "code which should always run goes here"
+		sh 'docker rm classweb1'
 	}
     }
 }

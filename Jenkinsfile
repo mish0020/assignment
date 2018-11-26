@@ -9,7 +9,7 @@ agent{label 'linux'}
 	   }
 	    stage('Build') {
 		    steps{
-			   sh 'docker build -t --no-cache classweb:${BUILD_NUMBER} .'
+			   sh 'docker build --no-cache -t classweb:${BUILD_NUMBER} .'
 		    }
 	    }
 	    stage('Test') {
@@ -17,5 +17,10 @@ agent{label 'linux'}
 		    {sh 'docker run -d --rm --name classweb1 -P -p 80:8080 classweb:${BUILD_NUMBER}'}
 		    {sh 'curl $(curl 169.254.169.254/latest/meta-data/local-ipv4) | grep "super"'}
 	    }
+    }  	    
+    post {
+	 always {
+		echo "code which should always run goes here"
+	}
     }
 }

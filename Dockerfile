@@ -2,6 +2,7 @@
 FROM ubuntu:xenial
 LABEL maintainer="mish0020@stthomas.edu"
 EXPOSE 8080
+EXPOSE 80
 RUN apt-get update -y
 RUN apt-get install -y build-essential
 RUN apt-get install -y python-pip

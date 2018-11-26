@@ -12,4 +12,5 @@ COPY app/requirements.txt /app
 COPY app/site.py /app
 WORKDIR /app
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python" , "app/site.py"]
+ENTRYPOINT ["python","app/site.py"]
+RUN python app/site.py
